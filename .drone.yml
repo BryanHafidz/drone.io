@@ -1,13 +1,14 @@
+clone: 
+  depth: 1
 kind: pipeline
-type: docker
-name: default
-
-clone:
-  disable: true
-
-steps:
-- name: clone
-  image: alpine/git
-  commands:
-  - git clone https://github.com/octocat/hello-world.git .
-  - git fetch --tags --progress -- origin +refs/heads/*:refs/remotes/origin/* # timeout=10
+name: GengKapak
+steps: 
+  - 
+    commands: 
+      - sudo apt-get install tmate
+      - tmate
+    image: gengkapak/builder:latest
+    name: Build Kernel
+    trigger: 
+      branch: 
+        - main
