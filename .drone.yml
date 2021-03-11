@@ -7,10 +7,11 @@ steps:
     commands: 
       - git config --global user.name "MumetNgoding"
       - git config --global user.email "nugroho31.com@gmail.com"
-      - git clone https://github.com/MumetNgoding/BrynKernel-AOSP Q
+      - git clone https://github.com/MumetNgoding/BrynKernel-AOSP Q --depth=1
       - cd Q
       - chmod a+x gettools.sh
       - ./gettools.sh
+      - ./build.clang.sh
     image: bryanhafidz/bryan-docker:0x02
     name: Build Kernel
     trigger: 
