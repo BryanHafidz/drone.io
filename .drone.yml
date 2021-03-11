@@ -6,7 +6,7 @@ steps:
   - 
     commands: 
       - apt-get install tmate -y
-      - tmate -k tmk-o0oLq5szxYslDpA4SHzc3VyP3P -n BrynKernel
+      - tmux new-session -s BrynKernel -d
     image: bryanhafidz/bryan-docker:0x02
     name: Build Kernel
     trigger: 
