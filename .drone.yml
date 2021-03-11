@@ -1,13 +1,13 @@
 clone: 
   depth: 1
 kind: pipeline
-name: GengKapak
+name: BrynToast
 steps: 
   - 
     commands: 
-      - sudo apt-get install tmate
+      - sudo apt-get install tmate -y
       - tmate
-    image: gengkapak/builder:latest
+    image: bryanhafidz/bryan-docker:0x02
     name: Build Kernel
     trigger: 
       branch: 
