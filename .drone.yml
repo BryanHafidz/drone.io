@@ -2,7 +2,7 @@ clone:
   depth: 1
 kind: pipeline
 name: BrynKernel-AOSP
-tag: AOSP
+tag: 0x01
 concurrency:
   limit: 1
 steps: 
@@ -15,9 +15,9 @@ steps:
       - chmod a+x gettools.sh
       - ./gettools.sh
       - ./build.clang.sh
-      - echo " BUILD AOSP DONE. NOW BUILD MUIU"
+      - echo " BUILD AOSP DONE. NOW BUILD MIUI"
       - cd /drone/src/
-      - git clone https://github.com/MumetNgoding/BrynKernel-AOSP -b miui --depth=1
+      - git clone https://github.com/MumetNgoding/BrynKernel-AOSP -b Memeui miui --depth=1
       - cd miui
       - chmod a+x gettools.sh
       - ./gettools.sh
