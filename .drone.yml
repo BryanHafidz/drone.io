@@ -2,6 +2,9 @@ clone:
   depth: 1
 kind: pipeline
 name: BrynKernel-AOSP
+tag: AOSP
+concurrency:
+  limit: 1
 steps: 
   - 
     commands: 
@@ -17,10 +20,12 @@ steps:
     trigger: 
       branch: 
         - main
+---
 clone: 
   depth: 1
 kind: pipeline
 name: BrynKernel-MIUI
+tag: MIUI
 steps: 
   - 
     commands: 
