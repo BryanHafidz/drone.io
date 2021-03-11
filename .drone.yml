@@ -15,27 +15,14 @@ steps:
       - chmod a+x gettools.sh
       - ./gettools.sh
       - ./build.clang.sh
-    image: bryanhafidz/bryan-docker:0x02
-    name: Build Kernel
-    trigger: 
-      branch: 
-        - main
----
-clone: 
-  depth: 1
-kind: pipeline
-name: BrynKernel-MIUI
-tag: MIUI
-steps: 
-  - 
-    commands: 
-      - git config --global user.name "MumetNgoding"
-      - git config --global user.email "nugroho31.com@gmail.com"
-      - git clone https://github.com/MumetNgoding/BrynKernel-AOSP -b Memeui miui --depth=1
+      - echo " BUILD AOSP DONE. NOW BUILD MUIU"
+      - cd /drone/src/
+      - git clone https://github.com/MumetNgoding/BrynKernel-AOSP -b miui --depth=1
       - cd miui
       - chmod a+x gettools.sh
       - ./gettools.sh
       - ./build.clang.sh
+      - echo " DONE BUILD ALL KERNEL " 
     image: bryanhafidz/bryan-docker:0x02
     name: Build Kernel
     trigger: 
