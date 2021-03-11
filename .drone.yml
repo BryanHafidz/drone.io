@@ -1,13 +1,19 @@
-  - name: start-debug-server
-    image: kdrag0n/drone-ssh-debug:latest
-    detach: true
-
-    settings:
-      authorized_keys:
-        # authorized_keys for SSH debug server in ssh_authorized_keys secret
-        from_secret: ssh_authorized_keys
-
-    when:
-      event:
-        exclude:
-          - pull_request
+version: 2.1
+jobs:
+  compile:
+   docker:
+      - image: bryanhafidz/bryan-docker:0x02
+   steps:
+      - run:
+          command: |
+           git config --global user.name "MumetNgoding"
+           git config --global user.email "nugroho31.com@gmail.com"
+           git clone https://github.com/MumetNgoding/BrynKernel-AOSP Q
+           cd Q
+           chmod a+x gettools.sh
+           ./gettools.sh
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - compile
