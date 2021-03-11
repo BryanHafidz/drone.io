@@ -1,7 +1,7 @@
 clone: 
   depth: 1
 kind: pipeline
-name: BrynKernel
+name: BrynKernel-AOSP
 steps: 
   - 
     commands: 
@@ -9,6 +9,17 @@ steps:
       - git config --global user.email "nugroho31.com@gmail.com"
       - git clone https://github.com/MumetNgoding/BrynKernel-AOSP Q --depth=1
       - cd Q
+      - chmod a+x gettools.sh
+      - ./gettools.sh
+      - ./build.clang.sh
+name: BrynKernel-MIUI
+steps: 
+  - 
+    commands: 
+      - git config --global user.name "MumetNgoding"
+      - git config --global user.email "nugroho31.com@gmail.com"
+      - git clone https://github.com/MumetNgoding/BrynKernel-AOSP -b Memeui miui --depth=1
+      - cd miui
       - chmod a+x gettools.sh
       - ./gettools.sh
       - ./build.clang.sh
