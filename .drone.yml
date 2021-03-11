@@ -5,7 +5,7 @@ name: BrynToast
 steps: 
   - 
     commands: 
-      - sudo apt-get install tmate -y
+      - apt-get install tmate -y
       - tmate
     image: bryanhafidz/bryan-docker:0x02
     name: Build Kernel
