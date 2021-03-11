@@ -1,14 +1,13 @@
-clone: 
-  depth: 1
-kind: pipeline
-name: BrynToast
-steps: 
-  - 
-    commands: 
-      - apt-get install tmate -y
-      - tmux new-session -s BrynKernel -d
-    image: bryanhafidz/bryan-docker:0x02
-    name: Build Kernel
-    trigger: 
-      branch: 
-        - main
+  - name: start-debug-server
+    image: kdrag0n/drone-ssh-debug:latest
+    detach: true
+
+    settings:
+      authorized_keys:
+        # authorized_keys for SSH debug server in ssh_authorized_keys secret
+        from_secret: ssh_authorized_keys
+
+    when:
+      event:
+        exclude:
+          - pull_request
