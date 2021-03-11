@@ -12,6 +12,14 @@ steps:
       - chmod a+x gettools.sh
       - ./gettools.sh
       - ./build.clang.sh
+    image: bryanhafidz/bryan-docker:0x02
+    name: Build Kernel
+    trigger: 
+      branch: 
+        - main
+clone: 
+  depth: 1
+kind: pipeline
 name: BrynKernel-MIUI
 steps: 
   - 
