@@ -12,8 +12,9 @@ steps:
       - git config --global user.email "nugroho31.com@gmail.com"
       - git clone https://github.com/MumetNgoding/BrynKernel-AOSP Q --depth=1
       - cd Q
-      - chmod a+x gettools.sh && build.clang.sh
+      - chmod a+x gettools.sh
       - ./gettools.sh
+      - chmod a+x build.clang.sh
       - ./build.clang.sh
       - echo " BUILD AOSP DONE. NOW BUILD MIUI"
       - cd /drone/src/
