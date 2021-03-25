@@ -22,6 +22,7 @@ steps:
       - cd miui
       - chmod a+x gettools.sh
       - ./gettools.sh
+      - chmod a+x build.clang.sh
       - ./build.clang.sh
       - echo " DONE BUILD ALL KERNEL " 
     image: bryanhafidz/bryan-docker:0x02
