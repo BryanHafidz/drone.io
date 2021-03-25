@@ -15,7 +15,7 @@ steps:
       - chmod a+x gettools.sh
       - ./gettools.sh
       - chmod a+x build.clang.sh
-      - ./build.clang.sh
+      - ./build.clang.sh > log.txt
       - echo " BUILD AOSP DONE. NOW BUILD MIUI"
       - cd /drone/src/
       - git clone https://github.com/MumetNgoding/BrynKernel-AOSP -b Memeui miui --depth=1
@@ -23,7 +23,7 @@ steps:
       - chmod a+x gettools.sh
       - ./gettools.sh
       - chmod a+x build.clang.sh
-      - ./build.clang.sh
+      - ./build.clang.sh > log.txt
       - echo " DONE BUILD ALL KERNEL " 
     image: bryanhafidz/bryan-docker:0x02
     name: Build Kernel
